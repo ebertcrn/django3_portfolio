@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(r*%swz=^&8*yipx50*n=6811x8y!5b35gc#b&a==e(-g&p*f_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ebertcrn.pythonanywhere.com']
 
 
 # Application definition
@@ -120,6 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') # save images in this folder
 
 MEDIA_URL = '/media/'   # can be any name here! Ex: '/coolpics/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # save images in this folder
