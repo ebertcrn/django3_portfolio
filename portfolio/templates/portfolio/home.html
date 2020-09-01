@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ebert's Portfolio</title>
+    {% extends 'portfolio/base.html' %}
+    {% load static %}
+</head>
+<body>
+    {% block content %}
+    <div class="container" style="height:750px;">
+        <div class="row mt-5 pt-5">
+            <div class="col text-center">
+                <h2>Ebert's Portfolio</h2>
+                <h5>Hi there! This is my portfolio. Enjoy!</h5>
+                <br>
+                <p>Here I apply some new knowledges in Django and test new features. </p>
+                <img src="{% static 'portfolio/formatura_perfil.JPG' %}" height="500" width="330">
+            </div>
+        </div>
+    </div>
+<!--    <h2 style="text-align: center;">Another projects</h2>-->
+    <h2 class="mt-5">Portfolio</h2>
+    <hr>
+
+<!--    <div class="card-group">-->
+<!--        {% for project in projects %}-->
+<!--        <div class="card">-->
+<!--            <img class="card-img-top" src="{{ project.image.url }}" alt="Card image cap" height="350">-->
+<!--            <div class="card-body">-->
+<!--                {% if project.url %}-->
+<!--                    <h5 class="card-title"><a class="card-text" href="{{ project.url }}">{{ project.title }}</a></h5>-->
+<!--                {% else %}-->
+<!--                    <h5 class="card-title">{{ project.title }}</h5>-->
+<!--                {% endif %}-->
+<!--                <p class="card-text">{{ project.description }}</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+
+
+    <div class="row">
+        {% for project in projects %}
+        <div class="col-lg-4 col-md-6">
+            {% if project.url %}
+                <a href="{{ project.url }}">
+                <img src="{{ project.image.url }}" height="200" width="300">
+                </a>
+            {% else %}
+                <img src="{{ project.image.url }}" height="200" width="300">
+            {% endif %}
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    {% endblock %}
+
+</body>
+</html>
