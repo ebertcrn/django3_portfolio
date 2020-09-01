@@ -124,3 +124,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static') # save images in this folder
 
 MEDIA_URL = '/media/'   # can be any name here! Ex: '/coolpics/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # save images in this folder
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("Looks like no local file. You must be on production")
