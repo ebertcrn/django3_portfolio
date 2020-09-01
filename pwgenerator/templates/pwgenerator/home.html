@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>PW Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Password Generator by Ebert</h1>
+        <form action="{% url 'pwgenerator:password' %}"> <!-- ao clicar submit, vai para a url referenciada pelo nome 'password' em urls.py-->
+            <select name="length">
+                <option value="6">6 length</option>
+                <option value="7">7 length</option>
+                <option value="8">8 length</option>
+                <option value="9">9 length</option>
+                <option value="10" selected="selected">10 length</option>
+                <option value="11">11 length</option>
+                <option value="12">12 length</option>
+                <option value="13">13 length</option>
+                <option value="14">14 length</option>
+                <option value="15">15 length</option>
+                <option value="16">16 length</option>
+                <option value="17">17 length</option>
+                <option value="18">18 length</option>
+                <option value="19">19 length</option>
+                <option value="20">20 length</option>
+            </select> Length
+            <br>
+            <input type="checkbox" name="uppercase"> Uppercase
+            <br>
+            <input type="checkbox" name="lowercase"> Lowercase
+            <br>
+            <input type="checkbox" name="numbers"> Numbers
+            <br>
+            <input type="checkbox" name="specialchars"> Special Characters
+            <br>
+            <input type="submit" value="Submit" class="btn btn-primary">
+            <br>
+            <br>
+            <a href="{% url 'home' %}" class="btn btn-info">Back to Portfolio</a>
+        </form>
+    </div>
+</body>
+</html>
