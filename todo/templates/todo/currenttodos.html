@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Todos</title>
+    {% extends 'todo/base.html' %}
+    {% load static %}
+</head>
+<body>
+{% block content %}
+    <h1>Current Todos</h1>
+    <ul>
+        {% for todo in todos %}
+        <li>
+            <a href="{% url 'todo:viewtodo' todo.id %}">
+                {% if todo.important %}
+                    <b>{{ todo.title }}</b>
+                {% else %}
+                    {{ todo.title }}
+                {% endif %}
+                {% if todo.memo %}
+                    - {{ todo.memo|truncatechars:30 }}
+                {% endif %}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <form method="GET" action="{% url 'todo:createtodo' %}">
+        {% csrf_token %}
+        <button type="submit">Create new ToDo</button>
+    </form>
+{% endblock %}
+</body>
+</html>

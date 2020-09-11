@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Completed Todos</title>
+    {% extends 'todo/base.html' %}
+    {% load static %}
+</head>
+<body>
+    {% block content %}
+    <h1>Completed Todos</h1>
+    <ul>
+        {% for todo in todos %}
+        <li>
+            <a href="{% url 'todo:viewtodo' todo.id %}">
+                {% if todo.important %}
+                    <b>{{ todo.title }}</b>
+                {% else %}
+                    {{ todo.title }}
+                {% endif %}
+                {% if todo.memo %}
+                    - {{ todo.memo|truncatechars:30 }}
+                {% endif %}
+                {{ todo.datecompleted|date:'M j Y H:i' }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+</body>
+</html>

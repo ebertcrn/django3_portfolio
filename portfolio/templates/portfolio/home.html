@@ -14,32 +14,17 @@
                 <h2>Ebert's Portfolio</h2>
                 <h5>Hi there! This is my portfolio. Enjoy!</h5>
                 <br>
-                <p>Here I apply some new knowledges in Django and test new features! </p>
                 <img src="{% static 'portfolio/formatura_perfil.JPG' %}" height="500" width="330">
+                <br>
+                <br>
+                <p>My name is Ebert, I'm 27 and I have a bachelor's degree in electronic engineering from Federal University of Santa Catarina.</p>
+                <h5>Checkout some links below!</h5>
             </div>
         </div>
     </div>
 <!--    <h2 style="text-align: center;">Another projects</h2>-->
-    <h2 class="mt-5">Portfolio</h2>
+    <h2 class="mt-5">Links</h2>
     <hr>
-
-<!--    <div class="card-group">-->
-<!--        {% for project in projects %}-->
-<!--        <div class="card">-->
-<!--            <img class="card-img-top" src="{{ project.image.url }}" alt="Card image cap" height="350">-->
-<!--            <div class="card-body">-->
-<!--                {% if project.url %}-->
-<!--                    <h5 class="card-title"><a class="card-text" href="{{ project.url }}">{{ project.title }}</a></h5>-->
-<!--                {% else %}-->
-<!--                    <h5 class="card-title">{{ project.title }}</h5>-->
-<!--                {% endif %}-->
-<!--                <p class="card-text">{{ project.description }}</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        {% endfor %}-->
-<!--    </div>-->
-
-
     <div class="row">
         {% for project in projects %}
         <div class="col-lg-4 col-md-6">

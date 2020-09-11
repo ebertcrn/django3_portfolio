@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Todo</title>
+    {% extends 'todo/base.html' %}
+    {% load static %}
+</head>
+<body>
+
+    {% block content %}
+    {{ error }}
+    <h1>View Todo</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <form method="POST" action="{% url 'todo:completetodo' todo.id %}">
+        {% csrf_token %}
+        <button type="submit">Complete</button>
+    </form>
+    <form method="POST" action="{% url 'todo:deletetodo' todo.id %}">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+
+{% endblock %}
+</body>
+</html>

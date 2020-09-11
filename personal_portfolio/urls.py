@@ -24,6 +24,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('blog/', include('blog.urls')),
     path('password-generator/', include("pwgenerator.urls"), name='pwgenerator'),
+    path('todo/', include("todo.urls"), name='todo'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

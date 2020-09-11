@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'portfolio',
-    'pwgenerator'
+    'pwgenerator',
+    'todo'
 ]
 
 MIDDLEWARE = [
@@ -125,6 +126,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static') # save images in this folder
 
 MEDIA_URL = '/media/'   # can be any name here! Ex: '/coolpics/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # save images in this folder
+
+LOGIN_URL = '/todo/login'
 
 try:
     from .local_settings import *

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    {% extends 'todo/base.html' %}
+    {% load static %}
+</head>
+<body>
+    {% block content %}
+    <h1>Sign Up</h1>
+    <h2>{{ error }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <p>Username: {{ form.username }}</p>
+        <p>Password: {{ form.password1 }}</p>
+        <p>Confirm your password: {{ form.password2 }}</p>
+        <button type="submit">Sign Up</button>
+    </form>
+    {% endblock %}
+</body>
+</html>

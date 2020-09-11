@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo Project - Home</title>
+    {% extends 'todo/base.html' %}
+    {% load static %}
+</head>
+<body>
+    {% block content %}
+    <h1>Todo Project!</h1>
+    <h5>Create your To-Dos!</h5>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="{% url 'home' %}">Back to portfolio</a>
+
+
+    {% endblock %}
+</body>
+</html>
